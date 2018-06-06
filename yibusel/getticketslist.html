@@ -1,0 +1,38 @@
+<script language="javascript">
+var args = external.menuArguments;
+var document= args.document;
+var cframe = document.CONTENTS_IFRAME;
+
+
+var city=[
+   ["北京","天津","上海","重庆"],
+   ["南京","苏州","南通","常州"],
+   ["福州","福安","龙岩","南平"],
+   ["广州","潮阳","潮州","澄海"],
+   ["兰州","白银","定西","敦煌"]
+   ];
+
+ getCity();
+
+
+ function getCity(){
+    var sltProvince=document.form1.province;
+
+     var sltCity=document.form1.city;
+     var j = 2;
+     var provinceCity=city[j];
+ 
+     //清空城市下拉框，仅留提示选项
+     sltCity.length=1;
+ 
+     //将城市数组中的值填充到城市下拉框中
+     for(var i=0;i<provinceCity.length;i++){
+         var newOption = document.createElement("option");
+         newOption.value = i;
+         newOption.text = "wocaoxsh" +i;
+         sltCity.options.add(newOption);
+     }
+     sltCity.value = "3";
+   }
+
+</script>
